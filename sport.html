@@ -1,0 +1,1958 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REGLES | Team Catalogue</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-black text-white min-h-screen flex flex-col justify-between">
+    <!-- Sticky Header -->
+    <header class="bg-black border-b border-slate-800 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <img class="h-10 w-auto" src="little regles logo.webp" alt="Regles Logo">
+            <a href="index.html#catalogue" class="text-sm font-semibold text-slate-400 hover:text-emerald-400 transition-colors">
+                ← Back to Main Catalogue
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="py-6 sm:py-10 max-w-7xl mx-auto px-2 sm:px-4 w-full">
+        <!-- Title & Header Section -->
+        <div class="text-center mb-6">
+            <p class="text-xs font-bold text-[#99ff00] tracking-widest uppercase mb-1">Catalogue Collection</p>
+            <h1 class="text-2xl sm:text-4xl font-black tracking-tight text-slate-100 uppercase">
+    Catalogue <span class="text-[#99ff00]">Sport</span>
+</h1>
+            <p class="text-slate-500 text-xs sm:text-sm mt-1">Tap image to toggle front / back design</p>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="flex flex-wrap justify-center gap-3 my-8">
+            <button id="tab-football/futsal" onclick="filterCategory('football/futsal', this)" class="category-btn px-5 py-2.5 rounded-full font-bold text-sm bg-zinc-900 text-zinc-300 hover:bg-zinc-800 transition-all">
+                Football/Futsal
+            </button>
+            <button id="tab-badminton" onclick="filterCategory('badminton', this)" class="category-btn px-5 py-2.5 rounded-full font-bold text-sm bg-zinc-900 text-zinc-300 hover:bg-zinc-800 transition-all">
+                Badminton
+            </button>
+            <button id="tab-volleyball" onclick="filterCategory('volleyball', this)" class="category-btn px-5 py-2.5 rounded-full font-bold text-sm bg-zinc-900 text-zinc-300 hover:bg-zinc-800 transition-all">
+                Volleyball
+            </button>
+            <button id="tab-e-sport" onclick="filterCategory('e-sport', this)" class="category-btn px-5 py-2.5 rounded-full font-bold text-sm bg-zinc-900 text-zinc-300 hover:bg-zinc-800 transition-all">
+                E-Sport
+            </button>
+            <button id="tab-others" onclick="filterCategory('others', this)" class="category-btn px-5 py-2.5 rounded-full font-bold text-sm bg-zinc-900 text-zinc-300 hover:bg-zinc-800 transition-all">
+                Others
+            </button>
+        </div>
+
+        <!-- 2-Column Grid on Mobile (Zush Style) -->
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2.5 sm:gap-6" id="product-grid">
+        
+            <!-- SAMPLE CARD 1 (Football/Futsal) -->
+            <div class="product-card football/futsal bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="football-image/ft1f.webp" 
+                         data-front="football-image/ft1f.webp" 
+                         data-back="football-image/ft1b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">RGLS 0224049</span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div>
+            <div class="product-card football/futsal bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="football-image/ft2f.webp" 
+                         data-front="football-image/ft2f.webp" 
+                         data-back="football-image/ft2b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">ASI203</span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div>
+            <div class="product-card football/futsal bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="football-image/ft3f.webp" 
+                         data-front="football-image/ft3f.webp" 
+                         data-back="football-image/ft3b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">AS-K104</span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div>
+            <div class="product-card football/futsal bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="football-image/ft4f.webp" 
+                         data-front="football-image/ft4f.webp" 
+                         data-back="football-image/ft4b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">AS-K201</span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div>
+            <div class="product-card football/futsal bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="football-image/ft5f.webp" 
+                         data-front="football-image/ft5f.webp" 
+                         data-back="football-image/ft5b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">AS-R201</span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div>
+            <div class="product-card football/futsal bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="football-image/ft6f.webp" 
+                         data-front="football-image/ft6f.webp" 
+                         data-back="football-image/ft6b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">HK-01</span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div>
+            <div class="product-card football/futsal bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="football-image/ft7f.webp" 
+                         data-front="football-image/ft7f.webp" 
+                         data-back="football-image/ft7b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">HK-01</span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div>
+            <div class="product-card football/futsal bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="football-image/ft8f.webp" 
+                         data-front="football-image/ft8f.webp" 
+                         data-back="football-image/ft8b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">HK-01</span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div>
+            <div class="product-card football/futsal bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="football-image/ft9f.webp" 
+                         data-front="football-image/ft9f.webp" 
+                         data-back="football-image/ft9b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">HK-01</span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div>
+            <div class="product-card football/futsal bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="football-image/ft10f.webp" 
+                         data-front="football-image/ft10f.webp" 
+                         data-back="football-image/ft10b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">HK-01</span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div>
+            <div class="product-card football/futsal bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="football-image/ft11f.webp" 
+                         data-front="football-image/ft11f.webp" 
+                         data-back="football-image/ft11b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">HK-01</span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div>
+            <div class="product-card football/futsal bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="football-image/ft12f.webp" 
+                         data-front="football-image/ft12f.webp" 
+                         data-back="football-image/ft12b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">HK-01</span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div>
+            <div class="product-card football/futsal bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="football-image/ft13f.webp" 
+                         data-front="football-image/ft13f.webp" 
+                         data-back="football-image/ft13b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">HK-01</span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div>
+            <div class="product-card football/futsal bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="football-image/ft14f.webp" 
+                         data-front="football-image/ft14f.webp" 
+                         data-back="football-image/ft14b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">RGLS 042309</span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div>
+            <div class="product-card football/futsal bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="football-image/ft15f.webp" 
+                         data-front="football-image/ft15f.webp" 
+                         data-back="football-image/ft15b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">RGLS 0123013</span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div>
+            <div class="product-card football/futsal bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="football-image/ft16f.webp" 
+                         data-front="football-image/ft16f.webp" 
+                         data-back="football-image/ft16b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">RGLS 0124079</span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div>
+            <div class="product-card football/futsal bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="football-image/ft17f.webp" 
+                         data-front="football-image/ft17f.webp" 
+                         data-back="football-image/ft17b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">RGLS 0124088</span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div>
+             <div class="product-card football/futsal bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="football-image/ft18f.webp" 
+                         data-front="football-image/ft18f.webp" 
+                         data-back="football-image/ft18b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">RGLS 0124114</span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div>
+             <div class="product-card football/futsal bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="football-image/ft19f.webp" 
+                         data-front="football-image/ft19f.webp" 
+                         data-back="football-image/ft19b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">RGLS 0223024</span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div>
+            <div class="product-card football/futsal bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="football-image/ft20f.webp" 
+                         data-front="football-image/ft20f.webp" 
+                         data-back="football-image/ft20b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">RGLS 0223044</span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div>
+            <div class="product-card football/futsal bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="football-image/ft21f.webp" 
+                         data-front="football-image/ft21f.webp" 
+                         data-back="football-image/ft21b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">RGLS 0224051</span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div>
+            <div class="product-card football/futsal bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="football-image/ft22f.webp" 
+                         data-front="football-image/ft22f.webp" 
+                         data-back="football-image/ft22b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">RGLS 0224072</span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div>
+            <div class="product-card football/futsal bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="football-image/ft23f.webp" 
+                         data-front="football-image/ft23f.webp" 
+                         data-back="football-image/ft23b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">RGLS 0323009</span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div>
+            <div class="product-card football/futsal bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="football-image/ft24f.webp" 
+                         data-front="football-image/ft24f.webp" 
+                         data-back="football-image/ft24b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">RGLS 0324003</span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div>
+            <div class="product-card football/futsal bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="football-image/ft25f.webp" 
+                         data-front="football-image/ft25f.webp" 
+                         data-back="football-image/ft25b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">RGLS 0324008</span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div>
+            <div class="product-card football/futsal bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="football-image/ft26f.webp" 
+                         data-front="football-image/ft26f.webp" 
+                         data-back="football-image/ft26b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">RGLS 0324025</span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div>
+            <div class="product-card football/futsal bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="football-image/ft27f.webp" 
+                         data-front="football-image/ft27f.webp" 
+                         data-back="football-image/ft27b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">RGLS 0324031</span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div>
+            <div class="product-card football/futsal bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="football-image/ft28f.webp" 
+                         data-front="football-image/ft28f.webp" 
+                         data-back="football-image/ft28b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">RGLS 0324051</span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div>
+            <div class="product-card football/futsal bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="football-image/ft29f.webp" 
+                         data-front="football-image/ft29f.webp" 
+                         data-back="football-image/ft29b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">RGLS 03240296</span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div>
+            <div class="product-card football/futsal bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="football-image/ft30f.webp" 
+                         data-front="football-image/ft30f.webp" 
+                         data-back="football-image/ft30b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">RGLS 0325005</span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div>
+            <div class="product-card football/futsal bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="football-image/ft31f.webp" 
+                         data-front="football-image/ft31f.webp" 
+                         data-back="football-image/ft31b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">rgls 0424040</span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div>
+            <div class="product-card football/futsal bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="football-image/ft32f.webp" 
+                         data-front="football-image/ft32f.webp" 
+                         data-back="football-image/ft32b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">RGLS 0424078</span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div>
+            <div class="product-card football/futsal bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="football-image/ft33f.webp" 
+                         data-front="football-image/ft33f.webp" 
+                         data-back="football-image/ft33b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">RGLS 0425140</span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div>
+            <div class="product-card football/futsal bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="football-image/ft34f.webp" 
+                         data-front="football-image/ft34f.webp" 
+                         data-back="football-image/ft34b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">RGLS 0524151</span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div>
+            <div class="product-card football/futsal bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="football-image/ft35f.webp" 
+                         data-front="football-image/ft35f.webp" 
+                         data-back="football-image/ft35b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">RGLS 0525036</span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div>
+            <div class="product-card football/futsal bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="football-image/ft36f.webp" 
+                         data-front="football-image/ft36f.webp" 
+                         data-back="football-image/ft36b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">RGLS 525139</span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div>
+            <div class="product-card football/futsal bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="football-image/ft37f.webp" 
+                         data-front="football-image/ft37f.webp" 
+                         data-back="football-image/ft37b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">RGLS 0525241</span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div>
+            <div class="product-card football/futsal bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="football-image/ft38f.webp" 
+                         data-front="football-image/ft38f.webp" 
+                         data-back="football-image/ft38b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">RGLS 0623061</span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div>
+            <div class="product-card football/futsal bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="football-image/ft39f.webp" 
+                         data-front="football-image/ft39f.webp" 
+                         data-back="football-image/ft39b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">RGLS 0625022</span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div>
+            <div class="product-card football/futsal bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="football-image/ft40f.webp" 
+                         data-front="football-image/ft40f.webp" 
+                         data-back="football-image/ft40b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">RGLS 0625316/span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div>
+             <div class="product-card football/futsal bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="football-image/ft41f.webp" 
+                         data-front="football-image/ft41f.webp" 
+                         data-back="football-image/ft41b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">RGLS 0625336/span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div>
+             <div class="product-card football/futsal bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="football-image/ft42f.webp" 
+                         data-front="football-image/ft42f.webp" 
+                         data-back="football-image/ft42b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">RGLS 0724182</span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div>
+             <div class="product-card football/futsal bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="football-image/ft43f.webp" 
+                         data-front="football-image/ft43f.webp" 
+                         data-back="football-image/ft43b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">RGLS 0725138</span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div>
+             <div class="product-card football/futsal bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="football-image/ft44f.webp" 
+                         data-front="football-image/ft44f.webp" 
+                         data-back="football-image/ft44b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">RGLS 0824048</span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div>
+             <div class="product-card football/futsal bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="football-image/ft45f.webp" 
+                         data-front="football-image/ft45f.webp" 
+                         data-back="football-image/ft45b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">RGLS 0825030</span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div>
+             <div class="product-card football/futsal bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="football-image/ft46f.webp" 
+                         data-front="football-image/ft46f.webp" 
+                         data-back="football-image/ft46b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">RGLS 0923014</span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div>
+             <div class="product-card football/futsal bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="football-image/ft47f.webp" 
+                         data-front="football-image/ft47f.webp" 
+                         data-back="football-image/ft47b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">RGLS 0923045</span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div>
+             <div class="product-card football/futsal bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="football-image/ft48f.webp" 
+                         data-front="football-image/ft48f.webp" 
+                         data-back="football-image/ft48b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">RGLS 0925093</span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div>
+             <div class="product-card football/futsal bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="football-image/ft49f.webp" 
+                         data-front="football-image/ft49f.webp" 
+                         data-back="football-image/ft49b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">RGLS 1023069</span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div>
+             <div class="product-card football/futsal bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="football-image/ft50f.webp" 
+                         data-front="football-image/ft50f.webp" 
+                         data-back="football-image/ft50b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">RGLS 1023137</span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div>
+             <div class="product-card football/futsal bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="football-image/ft51f.webp" 
+                         data-front="football-image/ft51f.webp" 
+                         data-back="football-image/ft51b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">RGLS 1023150</span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div>
+             <div class="product-card football/futsal bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="football-image/ft52f.webp" 
+                         data-front="football-image/ft52f.webp" 
+                         data-back="football-image/ft52b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">RGLS 1025003</span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div>
+             <div class="product-card football/futsal bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="football-image/ft53f.webp" 
+                         data-front="football-image/ft53f.webp" 
+                         data-back="football-image/ft53b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">RGLS 1025112</span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div>
+             <div class="product-card football/futsal bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="football-image/ft54f.webp" 
+                         data-front="football-image/ft54f.webp" 
+                         data-back="football-image/ft54b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">RGLS 1025201</span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div>
+             <div class="product-card football/futsal bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="football-image/ft55f.webp" 
+                         data-front="football-image/ft55f.webp" 
+                         data-back="football-image/ft55b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">RGLS 1124025</span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div>
+             <div class="product-card football/futsal bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="football-image/ft56f.webp" 
+                         data-front="football-image/ft56f.webp" 
+                         data-back="football-image/ft56b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">RGLS 1222007</span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div>
+             <div class="product-card football/futsal bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="football-image/ft57f.webp" 
+                         data-front="football-image/ft57f.webp" 
+                         data-back="football-image/ft57b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">RGLS 1223036</span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div>
+             <div class="product-card football/futsal bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="football-image/ft58f.webp" 
+                         data-front="football-image/ft58f.webp" 
+                         data-back="football-image/ft58b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">RGLS 1223062</span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div>
+             <div class="product-card football/futsal bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="football-image/ft59f.webp" 
+                         data-front="football-image/ft59f.webp" 
+                         data-back="football-image/ft59b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">RGLS 1225002</span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div>
+             <div class="product-card football/futsal bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="football-image/ft60f.webp" 
+                         data-front="football-image/ft60f.webp" 
+                         data-back="football-image/ft60b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">RGLS 1225003</span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div>
+              <!-- SAMPLE CARD 2 (Badminton) -->
+            <div class="product-card badminton bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="badminton-image/bd01f.webp" 
+                         data-front="badminton-image/bd01f.webp" 
+                         data-back="badminton-image/bd01b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">HK-01</span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div>
+            <div class="product-card badminton bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="badminton-image/bd02f.webp" 
+                         data-front="badminton-image/bd02f.webp" 
+                         data-back="badminton-image/bd02b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">RGLS 0224097</span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div>
+            <div class="product-card badminton bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="badminton-image/bd03f.webp" 
+                         data-front="badminton-image/bd03f.webp" 
+                         data-back="badminton-image/bd03b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">RGLS 0324087 </span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div>
+            <div class="product-card badminton bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="badminton-image/bd04f.webp" 
+                         data-front="badminton-image/bd04f.webp" 
+                         data-back="badminton-image/bd04b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">RGLS 0523006 </span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div>
+            <div class="product-card badminton bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="badminton-image/bd05f.webp" 
+                         data-front="badminton-image/bd05f.webp" 
+                         data-back="badminton-image/bd05b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">RGLS 0824123 </span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div>
+            <div class="product-card badminton bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="badminton-image/bd06f.webp" 
+                         data-front="badminton-image/bd06f.webp" 
+                         data-back="badminton-image/bd06b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">RGLS 0825237 </span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div>
+            <div class="product-card badminton bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="badminton-image/bd07f.webp" 
+                         data-front="badminton-image/bd07f.webp" 
+                         data-back="badminton-image/bd07b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">RGLS 0923022 </span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div>
+            <div class="product-card badminton bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="badminton-image/bd08f.webp" 
+                         data-front="badminton-image/bd08f.webp" 
+                         data-back="badminton-image/bd08b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">RGLS 1025031 </span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div>
+            <div class="product-card badminton bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="badminton-image/bd09f.webp" 
+                         data-front="badminton-image/bd09f.webp" 
+                         data-back="badminton-image/bd09b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">RGLS 1025032 </span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div>
+            <div class="product-card badminton bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="badminton-image/bd10f.webp" 
+                         data-front="badminton-image/bd10f.webp" 
+                         data-back="badminton-image/bd10b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">RGLS 1122012 </span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div>
+            <div class="product-card badminton bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="badminton-image/bd11f.webp" 
+                         data-front="badminton-image/bd11f.webp" 
+                         data-back="badminton-image/bd11b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">RGLS 1124153 </span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div>
+            <div class="product-card badminton bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="badminton-image/bd12f.webp" 
+                         data-front="badminton-image/bd12f.webp" 
+                         data-back="badminton-image/bd12b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">RGLS 1125001</span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div>
+            <div class="product-card badminton bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="badminton-image/bd13f.webp" 
+                         data-front="badminton-image/bd13f.webp" 
+                         data-back="badminton-image/bd13b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">RGLS 1125002</span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div>
+            <div class="product-card badminton bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="badminton-image/bd14f.webp" 
+                         data-front="badminton-image/bd14f.webp" 
+                         data-back="badminton-image/bd14b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">RGLS 1125003 </span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div>
+            <div class="product-card badminton bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="badminton-image/bd15f.webp" 
+                         data-front="badminton-image/bd15f.webp" 
+                         data-back="badminton-image/bd15b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">RGLS 04240011</span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div>
+            <!-- SAMPLE CARD 2 (Volleyball) -->
+             <div class="product-card volleyball bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="volleyball-image/vb01f.webp" 
+                         data-front="volleyball-image/vb01f.webp" 
+                         data-back="volleyball-image/vb01b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">HK-01</span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div>
+            <div class="product-card volleyball bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="volleyball-image/vb02f.webp" 
+                         data-front="volleyball-image/vb02f.webp" 
+                         data-back="volleyball-image/vb02b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">RGLS 0425113</span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div><div class="product-card volleyball bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="volleyball-image/vb03f.webp" 
+                         data-front="volleyball-image/vb03f.webp" 
+                         data-back="volleyball-image/vb03b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">RGLS 0623030</span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div><div class="product-card volleyball bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="volleyball-image/vb04f.webp" 
+                         data-front="volleyball-image/vb04f.webp" 
+                         data-back="volleyball-image/vb04b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">RGLS 0625165</span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div><div class="product-card volleyball bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="volleyball-image/vb05f.webp" 
+                         data-front="volleyball-image/vb05f.webp" 
+                         data-back="volleyball-image/vb05b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">RGLS 0824002 </span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div><div class="product-card volleyball bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="volleyball-image/vb06f.webp" 
+                         data-front="volleyball-image/vb06f.webp" 
+                         data-back="volleyball-image/vb06b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">RGLS 0825271</span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div><div class="product-card volleyball bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="volleyball-image/vb07f.webp" 
+                         data-front="volleyball-image/vb07f.webp" 
+                         data-back="volleyball-image/vb07b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">RGLS 0925192 </span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div><div class="product-card volleyball bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="volleyball-image/vb08f.webp" 
+                         data-front="volleyball-image/vb08f.webp" 
+                         data-back="volleyball-image/vb08b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">RGLS 1023130 </span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div><div class="product-card volleyball bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="volleyball-image/vb09f.webp" 
+                         data-front="volleyball-image/vb09f.webp" 
+                         data-back="volleyball-image/vb09b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">RGLS 1125004</span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div><div class="product-card volleyball bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="volleyball-image/vb10f.webp" 
+                         data-front="volleyball-image/vb10f.webp" 
+                         data-back="volleyball-image/vb10b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">RGLS 1125005</span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div><div class="product-card volleyball bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="volleyball-image/vb11f.webp" 
+                         data-front="volleyball-image/vb11f.webp" 
+                         data-back="volleyball-image/vb11b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">RGLS 1125006 </span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div><div class="product-card volleyball bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="volleyball-image/vb12f.webp" 
+                         data-front="volleyball-image/vb12f.webp" 
+                         data-back="volleyball-image/vb12b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">RGLS 1125007 </span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div><div class="product-card volleyball bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="volleyball-image/vb13f.webp" 
+                         data-front="volleyball-image/vb13f.webp" 
+                         data-back="volleyball-image/vb13b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">RGLS 1125008</span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div><div class="product-card volleyball bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="volleyball-image/vb14f.webp" 
+                         data-front="volleyball-image/vb14f.webp" 
+                         data-back="volleyball-image/vb14b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">RGLS 1125009 </span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div>
+            <div class="product-card volleyball bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="volleyball-image/vb15f.webp" 
+                         data-front="volleyball-image/vb15f.webp" 
+                         data-back="volleyball-image/vb15b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">RGLS 1125010 </span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div>
+            <!-- SAMPLE CARD 4 (E-Sport) -->
+            <div class="product-card e-sport bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="esport-image/es1f.webp" 
+                         data-front="esport-image/es1f.webp" 
+                         data-back="esport-image/es1b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">RGLS 0124002 </span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div>
+
+            <div class="product-card e-sport bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="esport-image/es2f.webp" 
+                         data-front="esport-image/es2f.webp" 
+                         data-back="esport-image/es2b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">RGLS 0124059 </span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div><div class="product-card e-sport bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="esport-image/es3f.webp" 
+                         data-front="esport-image/es3f.webp" 
+                         data-back="esport-image/es3b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">RGLS 0424080 </span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div><div class="product-card e-sport bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="esport-image/es4f.webp" 
+                         data-front="esport-image/es4f.webp" 
+                         data-back="esport-image/es4b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">RGLS 0625005 </span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div><div class="product-card e-sport bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="esport-image/es5f.webp" 
+                         data-front="esport-image/es5f.webp" 
+                         data-back="esport-image/es5b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">rgls 0924030</span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div><div class="product-card e-sport bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="esport-image/es6f.webp" 
+                         data-front="esport-image/es6f.webp" 
+                         data-back="esport-image/es6b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">RGLS 0924094</span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div><div class="product-card e-sport bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="esport-image/es7f.webp" 
+                         data-front="esport-image/es7f.webp" 
+                         data-back="esport-image/es7b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">RGLS 1023113 </span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div><div class="product-card e-sport bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="esport-image/es8f.webp" 
+                         data-front="esport-image/es8f.webp" 
+                         data-back="esport-image/es8b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">RGLS 1125172</span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div><div class="product-card e-sport bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="esport-image/es9f.webp" 
+                         data-front="esport-image/es9f.webp" 
+                         data-back="esport-image/es9b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">RGLS 1125173 </span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div><div class="product-card e-sport bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="esport-image/es10f.webp" 
+                         data-front="esport-image/es10f.webp" 
+                         data-back="esport-image/es10b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">RGLS 1125174 </span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div><div class="product-card e-sport bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="esport-image/es11f.webp" 
+                         data-front="esport-image/es11f.webp" 
+                         data-back="esport-image/es11b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">RGLS 1125175 </span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div><div class="product-card e-sport bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="esport-image/es12f.webp" 
+                         data-front="esport-image/es12f.webp" 
+                         data-back="esport-image/es12b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">RGLS 1125176 </span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div><div class="product-card e-sport bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="esport-image/es13f.webp" 
+                         data-front="esport-image/es13f.webp" 
+                         data-back="esport-image/es13b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">RGLS 1125177</span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div><div class="product-card e-sport bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="esport-image/es14f.webp" 
+                         data-front="esport-image/es14f.webp" 
+                         data-back="esport-image/es14b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">RGLS 1125178 </span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div><div class="product-card e-sport bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="esport-image/es15f.webp" 
+                         data-front="esport-image/es15f.webp" 
+                         data-back="esport-image/es15b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">RGLS 1222003</span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div>
+
+            <!-- SAMPLE CARD 4 (Others) -->
+            <div class="product-card others bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="others.sport-image/os1f.webp" 
+                         data-front="others.sport-image/os1f.webp" 
+                         data-back="others.sport-image/os1b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">HK-01</span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div>
+
+             <div class="product-card others bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="others.sport-image/os2f.webp" 
+                         data-front="others.sport-image/os2f.webp" 
+                         data-back="others.sport-image/os2b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">HK-01</span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div> <div class="product-card others bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="others.sport-image/os3f.webp" 
+                         data-front="others.sport-image/os3f.webp" 
+                         data-back="others.sport-image/os3b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">RGLS 032504 </span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div> <div class="product-card others bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="others.sport-image/os4f.webp" 
+                         data-front="others.sport-image/os4f.webp" 
+                         data-back="others.sport-image/os4b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">RGLS 0124123 </span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div> <div class="product-card others bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="others.sport-image/os5f.webp" 
+                         data-front="others.sport-image/os5f.webp" 
+                         data-back="others.sport-image/os5b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">RGLS 0223014</span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div> <div class="product-card others bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="others.sport-image/os6f.webp" 
+                         data-front="others.sport-image/os6f.webp" 
+                         data-back="others.sport-image/os6b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">RGLS 0223057 </span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div> <div class="product-card others bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="others.sport-image/os7f.webp" 
+                         data-front="others.sport-image/os7f.webp" 
+                         data-back="others.sport-image/os7b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">RGLS 0323032</span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div> <div class="product-card others bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="others.sport-image/os8f.webp" 
+                         data-front="others.sport-image/os8f.webp" 
+                         data-back="others.sport-image/os8b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">RGLS 0423036 </span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div> <div class="product-card others bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="others.sport-image/os9f.webp" 
+                         data-front="others.sport-image/os9f.webp" 
+                         data-back="others.sport-image/os9b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">RGLS 0425242 </span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div> <div class="product-card others bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="others.sport-image/os10f.webp" 
+                         data-front="others.sport-image/os10f.webp" 
+                         data-back="others.sport-image/os10b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">RGLS 0524166 </span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div> <div class="product-card others bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="others.sport-image/os11f.webp" 
+                         data-front="others.sport-image/os11f.webp" 
+                         data-back="others.sport-image/os11b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">RGLS 0525100 </span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div> <div class="product-card others bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="others.sport-image/os12f.webp" 
+                         data-front="others.sport-image/os12f.webp" 
+                         data-back="others.sport-image/os12b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">RGLS 0723003 </span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div> <div class="product-card others bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="others.sport-image/os13f.webp" 
+                         data-front="others.sport-image/os13f.webp" 
+                         data-back="others.sport-image/os13b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">RGLS 0723046 </span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div> <div class="product-card others bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="others.sport-image/os14f.webp" 
+                         data-front="others.sport-image/os14f.webp" 
+                         data-back="others.sport-image/os14b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">RGLS 0723063 </span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div> <div class="product-card others bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="others.sport-image/os15f.webp" 
+                         data-front="others.sport-image/os15f.webp" 
+                         data-back="others.sport-image/os15b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">RGLS 0723068</span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div> <div class="product-card others bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="others.sport-image/os16f.webp" 
+                         data-front="others.sport-image/os16f.webp" 
+                         data-back="others.sport-image/os16b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">RGLS 0725127 </span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div> <div class="product-card others bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="others.sport-image/os17f.webp" 
+                         data-front="others.sport-image/os17f.webp" 
+                         data-back="others.sport-image/os17b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">RGLS 0823023 </span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div>
+             <div class="product-card others bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer select-none" onclick="toggleShirtView(this)">
+                <div class="relative aspect-[3/4] sm:h-96 bg-slate-100 overflow-hidden flex items-center justify-center p-2">
+                    <img src="others.sport-image/os18f.webp" 
+                         data-front="others.sport-image/os18f.webp" 
+                         data-back="others.sport-image/os18b.webp" 
+                         data-view="front" 
+                         
+                         class="product-img w-full h-full object-contain transition-all duration-300">
+                    <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">RGLS 1124188 </span>
+                    <span class="view-badge absolute bottom-2 right-2 bg-slate-900/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md uppercase font-semibold">Front</span>
+                </div>
+              
+            </div>
+
+            </main>
+     
+        
+       <!-- Contact Form & Footer Section -->
+<footer class="bg-black border-t border-slate-800 text-slate-400 pt-16 pb-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Main Footer Grid Content -->
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 pb-12 border-b border-slate-800">
+            <!-- Left Brand Column -->
+            <div class="md:col-span-5 space-y-4">
+                <a href="#" class="flex items-center gap-3">
+                    <img src="little regles logo.png" alt="REGLES Logo" class="h-8 w-auto">
+                </a>
+                <p class="text-sm text-slate-400 max-w-sm leading-relaxed">
+                    REGLES is Malaysia's premier custom sublimation sportswear brand. We empower sports clubs, e-sports teams, and corporations with high-performance custom apparel engineered for greatness.
+                </p>
+                <!-- Social Links Block -->
+<div class="flex items-center gap-3 mt-6">
+    <!-- Facebook -->
+    <a href="https://www.facebook.com/share/1MkBbgc2Bv/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" 
+       aria-label="Facebook" 
+       class="w-12 h-12 rounded-xl bg-slate-800/80 hover:bg-slate-700 border border-slate-700/60 flex items-center justify-center text-slate-300 hover:text-white transition-all shadow-md hover:scale-105">
+        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+        </svg>
+    </a>
+
+    <!-- Instagram -->
+    <a href="https://www.instagram.com/Regles.sport" target="_blank" rel="noopener noreferrer" 
+       aria-label="Instagram" 
+       class="w-12 h-12 rounded-xl bg-slate-800/80 hover:bg-slate-700 border border-slate-700/60 flex items-center justify-center text-slate-300 hover:text-white transition-all shadow-md hover:scale-105">
+        <svg class="w-5 h-5 stroke-current fill-none stroke-[2]" viewBox="0 0 24 24">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+        </svg>
+    </a>
+
+    <!-- TikTok -->
+    <a href="https://www.tiktok.com/@Regles.official" target="_blank" rel="noopener noreferrer" 
+       aria-label="TikTok" 
+       class="w-12 h-12 rounded-xl bg-slate-800/80 hover:bg-slate-700 border border-slate-700/60 flex items-center justify-center text-slate-300 hover:text-white transition-all shadow-md hover:scale-105">
+        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+            <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 1 1-5.2-1.74 2.89 2.89 0 0 1 2.31-1.39V9.08a6.34 6.34 0 1 0 6.34 6.34V8.71a8.28 8.28 0 0 0 4.77 1.48V6.69z"/>
+        </svg>
+    </a>
+</div>
+            </div>
+
+            <!-- Add any middle menu links here if you have them -->
+        </div>
+
+ <!-- ========================================== -->
+<!-- FOOTER BOTTOM COPYRIGHT BAR & LEGAL LINKS  -->
+<!-- ========================================== -->
+<div class="border-t border-slate-800/80 py-6 text-xs text-slate-400">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+        
+        <!-- Copyright Text -->
+        <p class="text-center sm:text-left">
+            &copy; <span id="copyrightYear">2026</span> REGLES Apparel Sdn Bhd. All rights reserved.
+        </p>
+
+        <!-- Legal Links -->
+        <div class="flex items-center gap-6">
+            <button type="button" onclick="toggleLegalModal('privacyModal', true)" class="hover:text-white transition-colors underline-offset-4 hover:underline focus:outline-none cursor-pointer">
+                Privacy Policy
+            </button>
+            <span class="text-slate-700">|</span>
+            <button type="button" onclick="toggleLegalModal('termsModal', true)" class="hover:text-white transition-colors underline-offset-4 hover:underline focus:outline-none cursor-pointer">
+                Terms of Service
+            </button>
+        </div>
+    </div>
+</div>
+
+
+<!-- ========================================== -->
+<!-- PRIVACY POLICY MODAL                       -->
+<!-- ========================================== -->
+<div id="privacyModal" style="display: none;" class="fixed inset-0 z-[10000] bg-slate-950/80 backdrop-blur-sm items-center justify-center p-4">
+    <div class="bg-slate-900 border border-slate-800 text-slate-200 w-full max-w-2xl rounded-2xl shadow-2xl p-6 sm:p-8 max-h-[85vh] flex flex-col relative">
+        <!-- Header -->
+        <div class="flex items-center justify-between pb-4 border-b border-slate-800">
+            <h3 class="text-lg font-bold text-white">Privacy Policy</h3>
+            <button type="button" onclick="toggleLegalModal('privacyModal', false)" aria-label="Close" class="text-slate-400 hover:text-white text-2xl font-bold p-2 focus:outline-none cursor-pointer hover:bg-slate-800 rounded-lg transition-colors leading-none">
+                &times;
+            </button>
+        </div>
+
+        <!-- Content -->
+        <div class="overflow-y-auto py-4 space-y-4 text-sm text-slate-300 pr-2">
+            <p>At REGLES Apparel Sdn Bhd, we respect your privacy and are committed to protecting the personal information you share with us.</p>
+            <h4 class="font-bold text-white">1. Information We Collect</h4>
+            <p>We collect information you provide directly to us when making custom order inquiries, including your name, phone number, email address, and order design details.</p>
+            <h4 class="font-bold text-white">2. How We Use Your Information</h4>
+            <p>Your details are strictly used to process custom sportswear orders, provide design mockups, update order status via WhatsApp, and deliver your products.</p>
+            <h4 class="font-bold text-white">3. Data Protection</h4>
+            <p>We do not sell, rent, or trade your personal information to third parties.</p>
+        </div>
+
+        <!-- Footer -->
+        <div class="pt-4 border-t border-slate-800 flex justify-end">
+            <button type="button" onclick="toggleLegalModal('privacyModal', false)" class="bg-slate-800 hover:bg-slate-700 text-white font-semibold px-5 py-2 rounded-xl transition-colors cursor-pointer">
+                Close
+            </button>
+        </div>
+    </div>
+</div>
+
+
+<!-- ========================================== -->
+<!-- TERMS OF SERVICE MODAL                     -->
+<!-- ========================================== -->
+<div id="termsModal" style="display: none;" class="fixed inset-0 z-[10000] bg-slate-950/80 backdrop-blur-sm items-center justify-center p-4">
+    <div class="bg-slate-900 border border-slate-800 text-slate-200 w-full max-w-2xl rounded-2xl shadow-2xl p-6 sm:p-8 max-h-[85vh] flex flex-col relative">
+        <!-- Header -->
+        <div class="flex items-center justify-between pb-4 border-b border-slate-800">
+            <h3 class="text-lg font-bold text-white">Terms of Service</h3>
+            <button type="button" onclick="toggleLegalModal('termsModal', false)" aria-label="Close" class="text-slate-400 hover:text-white text-2xl font-bold p-2 focus:outline-none cursor-pointer hover:bg-slate-800 rounded-lg transition-colors leading-none">
+                &times;
+            </button>
+        </div>
+
+        <!-- Content -->
+        <div class="overflow-y-auto py-4 space-y-4 text-sm text-slate-300 pr-2">
+            <p>Welcome to REGLES Apparel. By placing an order with us, you agree to the following terms:</p>
+            <h4 class="font-bold text-white">1. Custom Artwork Approval</h4>
+            <p>All custom jersey designs, names, and numbers must be thoroughly reviewed and approved in writing prior to production start.</p>
+            <h4 class="font-bold text-white">2. Production & Delivery</h4>
+            <p>Standard custom sublimation production times apply from the date of deposit and final mockup confirmation.</p>
+            <h4 class="font-bold text-white">3. Returns & Replacements</h4>
+            <p>Due to the customized nature of sublimated sportswear, returns are only accepted for manufacturing defects verified upon delivery.</p>
+        </div>
+
+        <!-- Footer -->
+        <div class="pt-4 border-t border-slate-800 flex justify-end">
+            <button type="button" onclick="toggleLegalModal('termsModal', false)" class="bg-slate-800 hover:bg-slate-700 text-white font-semibold px-5 py-2 rounded-xl transition-colors cursor-pointer">
+                Close
+            </button>
+        </div>
+    </div>
+</div>
+
+
+<!-- ========================================== -->
+<!-- FAILSAFE JAVASCRIPT LOGIC                  -->
+<!-- ========================================== -->
+<script>
+    // Bulletproof toggle using inline style.display
+    window.toggleLegalModal = function(modalId, show) {
+        var el = document.getElementById(modalId);
+        if (el) {
+            el.style.display = show ? 'flex' : 'none';
+        }
+    };
+
+    // Backdrop click close
+    window.addEventListener('click', function(e) {
+        if (e.target.id === 'privacyModal') window.toggleLegalModal('privacyModal', false);
+        if (e.target.id === 'termsModal') window.toggleLegalModal('termsModal', false);
+    });
+
+    // Escape key close
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            window.toggleLegalModal('privacyModal', false);
+            window.toggleLegalModal('termsModal', false);
+        }
+    });
+</script>
+<!-- ========================================== -->
+<!-- FIXED BOTTOM-RIGHT WHATSAPP WIDGET (TRACKED) -->
+<!-- ========================================== -->
+<div class="fixed bottom-6 right-6 z-[9999]" id="whatsappWidget">
+    
+    <!-- Pop-up Menu Card -->
+    <div id="whatsappCard" class="hidden mb-3 w-80 bg-slate-900 border border-slate-800 rounded-2xl shadow-2xl p-4 transition-all duration-300">
+        <div class="flex items-center justify-between pb-3 border-b border-slate-800 mb-3">
+            <div class="flex items-center gap-3">
+                <div class="w-3 h-3 rounded-full bg-[#25D366] animate-pulse"></div>
+                <div>
+                    <h4 class="text-sm font-bold text-white leading-none">Chat with Regles Team</h4>
+                </div>
+            </div>
+            <!-- Close Button -->
+            <button id="closeWhatsappBtn" class="text-slate-400 hover:text-white p-1 focus:outline-none">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+        </div>
+
+        <div class="space-y-2">
+            <!-- Contact Line 1: Syazwan -->
+            <a 
+              href="https://wa.me/60193426243?text=Salam/Hai%20Regles%20Syazwan.%20Saya%20nak%20tanya%20pasal%20jersey%20sublimation%20boleh?" 
+              onclick="trackWhatsAppClick(event, 'Syazwan', this.href)"
+              class="flex items-center justify-between p-2.5 rounded-xl bg-slate-950 hover:bg-[#25D366]/10 border border-slate-800 hover:border-[#25D366]/40 transition-all group"
+            >
+                <div>
+                    <p class="text-xs font-bold text-white group-hover:text-[#25D366]">REGLES SYAZWAN</p>
+                </div>
+                <span class="text-xs font-semibold text-[#25D366] bg-[#25D366]/10 px-2.5 py-1 rounded-lg">Chat</span>
+            </a>
+
+            <!-- Contact Line 2: Akid -->
+            <a 
+              href="https://wa.me/601127357561?text=Hai%20Regles%20Akid.%20Saya%20nak%20tanya%20pasal%20jersey%20sublimation%20boleh?" 
+              onclick="trackWhatsAppClick(event, 'Akid', this.href)"
+              class="flex items-center justify-between p-2.5 rounded-xl bg-slate-950 hover:bg-[#25D366]/10 border border-slate-800 hover:border-[#25D366]/40 transition-all group"
+            >
+                <div>
+                    <p class="text-xs font-bold text-white group-hover:text-[#25D366]">REGLES AKID</p>
+                </div>
+                <span class="text-xs font-semibold text-[#25D366] bg-[#25D366]/10 px-2.5 py-1 rounded-lg">Chat</span>
+            </a>
+
+            <!-- Contact Line 3: Loh -->
+            <a 
+              href="https://wa.me/601161046136?text=Hai%20Regles%20Nasrullah.%20Saya%20nak%20tanya%20pasal%20jersey%20sublimation%20boleh?" 
+              onclick="trackWhatsAppClick(event, 'Loh', this.href)"
+              class="flex items-center justify-between p-2.5 rounded-xl bg-slate-950 hover:bg-[#25D366]/10 border border-slate-800 hover:border-[#25D366]/40 transition-all group"
+            >
+                <div>
+                    <p class="text-xs font-bold text-white group-hover:text-[#25D366]">REGLES NASRULLAH</p>
+                </div>
+                <span class="text-xs font-semibold text-[#25D366] bg-[#25D366]/10 px-2.5 py-1 rounded-lg">Chat</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Floating Trigger Button -->
+    <button id="toggleWhatsappBtn" aria-label="Open WhatsApp Chat" class="w-14 h-14 bg-[#25D366] hover:bg-[#20ba5a] text-white rounded-full flex items-center justify-center shadow-2xl hover:scale-105 transition-all focus:outline-none ml-auto">
+        <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.99c-.002 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c-.001 2.096.547 4.142 1.588 5.945L0 24l6.305-1.654a11.882 11.882 0 005.733 1.481h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+    </button>
+</div>
+
+<!-- JavaScript to Handle UI Interactions -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const toggleBtn = document.getElementById('toggleWhatsappBtn');
+        const closeBtn = document.getElementById('closeWhatsappBtn');
+        const card = document.getElementById('whatsappCard');
+        const widget = document.getElementById('whatsappWidget');
+
+        // Toggle card visibility on button click
+        if (toggleBtn) {
+            toggleBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                card.classList.toggle('hidden');
+            });
+        }
+
+        // Close when clicking x button
+        if (closeBtn) {
+            closeBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                card.classList.add('hidden');
+            });
+        }
+
+        // Close when clicking outside of the widget
+        document.addEventListener('click', function(e) {
+            if (widget && !widget.contains(e.target)) {
+                card.classList.add('hidden');
+            }
+        });
+    });
+</script>
+</div>
+
+
+
+    <script>
+        
+        // Category Filter
+      function filterCategory(category) {
+            const cards = document.querySelectorAll('.product-card');
+            const buttons = document.querySelectorAll('.category-btn');
+
+            // Reset button styling to inactive state
+            buttons.forEach(btn => {
+                btn.className = 'category-btn px-5 py-2.5 rounded-full font-bold text-sm bg-zinc-900 text-zinc-300 hover:bg-zinc-800 transition-all';
+            });
+
+            // Highlight the active button
+            const activeTab = document.getElementById('tab-' + category);
+            if (activeTab) {
+                activeTab.className = 'category-btn px-5 py-2.5 rounded-full font-bold text-sm bg-[#99ff00] text-black shadow-lg shadow-emerald-500/20 transition-all';
+            }
+
+            // Show matching products and hide non-matching products
+            cards.forEach(card => {
+                if (card.classList.contains(category)) {
+                    card.classList.remove('hidden');
+                    card.style.display = 'block';
+                } else {
+                    card.classList.add('hidden');
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Toggle Front / Back image view on click
+        function toggleShirtView(card) {
+            const img = card.querySelector('.product-img');
+            const badge = card.querySelector('.view-badge');
+            const currentView = img.getAttribute('data-view');
+            const frontSrc = img.getAttribute('data-front');
+            const backSrc = img.getAttribute('data-back');
+
+            if (currentView === 'front') {
+                img.src = backSrc;
+                img.setAttribute('data-view', 'back');
+                if (badge) badge.textContent = 'Back';
+            } else {
+                img.src = frontSrc;
+                img.setAttribute('data-view', 'front');
+                if (badge) badge.textContent = 'Front';
+            }
+        }
+
+        // Run on Page Load
+        document.addEventListener("DOMContentLoaded", function() {
+            filterCategory('football/futsal');
+        });
+    </script>
+</body>
+</html>
