@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Link in Bio Analytics | REGLES SPORTWEAR</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Supabase JS Library -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="bg-[#F8F9FA] text-slate-800 min-h-screen p-4 sm:p-8 font-sans antialiased select-none">
+
+    <div class="max-w-5xl mx-auto space-y-6">
+        
+        <!-- Header Section -->
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-2">
+            <div class="flex items-center gap-3">
+                <h1 class="text-xl sm:text-2xl font-bold tracking-tight text-slate-900">
+                    Link in Bio Analytics
+                </h1>
+                <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-800 border border-emerald-300">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> Live
+                </span>
+            </div>
+
+            <!-- Mobile-Optimized Filter Controls -->
+            <div class="flex flex-wrap items-center gap-2 sm:gap-3">
+                
+                <!-- Single Date Picker (For "Specific Date" option) -->
+                <input type="date" id="singleDatePicker" onchange="fetchAnalytics('date')" class="bg-white border border-slate-300 text-slate-700 text-xs font-semibold px-3 py-2.5 rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 cursor-pointer touch-manipulation">
+
+                <!-- Custom Date Range Pickers (Start Date & End Date) -->
+                <div id="customRangePicker" class="hidden flex items-center gap-1.5">
+                    <input type="date" id="startDatePicker" onchange="fetchAnalytics('custom_range')" class="bg-white border border-slate-300 text-slate-700 text-xs font-semibold px-2.5 py-2.5 rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 cursor-pointer touch-manipulation">
+                    <span class="text-xs font-bold text-slate-400">to</span>
+                    <input type="date" id="endDatePicker" onchange="fetchAnalytics('custom_range')" class="bg-white border border-slate-300 text-slate-700 text-xs font-semibold px-2.5 py-2.5 rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 cursor-pointer touch-manipulation">
+                </div>
+
+                <!-- Dropdown Range Selector -->
+                <select id="dateRangeSelect" onchange="handleDropdownChange()" class="bg-white border border-slate-300 text-slate-700 text-xs font-semibold px-3 py-2.5 rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 cursor-pointer touch-manipulation">
+                    <option value="all" selected>All Time</option>
+                    <option value="custom">Specific Date</option>
+                    <option value="custom_range">Custom Range</option>
+                    <option value="today">Today</option>
+                    <option value="yesterday">Yesterday</option>
+                    <option value="7days">Last 7 days</option>
+                    <option value="30days">Last 30 days</option>
+                </select>
+
+                
+            </div>
+        </div>
+
+        <h2 class="text-xs sm:text-sm font-semibold text-slate-600 -mb-2">Traffic overview</h2>
+
+        <!-- 3 Primary Metric Cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
+            <div class="bg-white border border-slate-200 p-4 sm:p-5 rounded-2xl shadow-sm">
+                <span class="text-xs font-medium text-slate-500 block mb-1">Views</span>
+                <h3 id="totalViews" class="text-2xl sm:text-3xl font-bold text-slate-900">0</h3>
+            </div>
+
+            <div class="bg-white border border-slate-200 p-4 sm:p-5 rounded-2xl shadow-sm">
+                <span class="text-xs font-medium text-slate-500 block mb-1">Clicks</span>
+                <h3 id="totalClicks" class="text-2xl sm:text-3xl font-bold text-slate-900">0</h3>
+            </div>
+
+            <div class="bg-white border border-slate-200 p-4 sm:p-5 rounded-2xl shadow-sm">
+                <span class="text-xs font-medium text-slate-500 block mb-1">Click rate</span>
+                <h3 id="conversionRate" class="text-2xl sm:text-3xl font-bold text-slate-900">0%</h3>
+            </div>
+        </div>
+
+        <!-- Daily Traffic Chart Card -->
+        <div class="bg-white border border-slate-200 p-4 sm:p-6 rounded-2xl shadow-sm">
+            <div class="flex items-center justify-between mb-4">
+                <span class="text-xs font-bold text-slate-500 uppercase tracking-wider">Views and clicks</span>
+                <div class="flex items-center gap-3 text-xs font-semibold">
+                    <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-blue-500 inline-block"></span> Views</span>
+                    <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-emerald-500 inline-block"></span> Clicks</span>
+                </div>
+            </div>
+            <div class="w-full relative h-56 sm:h-72">
+                <canvas id="trafficChart"></canvas>
+            </div>
+        </div>
+
+        <!-- Content Clicks (Team Breakdown) -->
+        <div class="bg-white border border-slate-200 p-4 sm:p-6 rounded-2xl shadow-sm">
+            <h3 class="text-xs sm:text-sm font-bold text-slate-800 mb-4">Content clicks</h3>
+            
+            <div class="space-y-3 sm:space-y-4">
+                   <!-- Syazwan -->
+                <div class="flex items-center justify-between p-3 rounded-xl hover:bg-slate-50 transition-colors border border-slate-100">
+                    <div class="flex items-center gap-3">
+                        <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-blue-100 border border-blue-300 text-blue-700 font-bold flex items-center justify-center text-xs sm:text-sm shrink-0">
+                            RS
+                        </div>
+                        <div>
+                            <p class="text-xs font-bold text-slate-900">Regles Syazwan - 019 342 6243</p>
+                            <div class="w-24 sm:w-32 bg-slate-100 h-1.5 rounded-full mt-1.5 overflow-hidden">
+                                <div id="barSyazwan" class="bg-blue-500 h-full rounded-full transition-all duration-300" style="width: 0%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <span id="clickSyazwan" class="text-xs font-bold text-slate-600">0 clicks</span>
+                </div>
+
+                <!-- Akid -->
+                <div class="flex items-center justify-between p-3 rounded-xl hover:bg-slate-50 transition-colors border border-slate-100">
+                    <div class="flex items-center gap-3">
+                        <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-emerald-100 border border-emerald-300 text-emerald-700 font-bold flex items-center justify-center text-xs sm:text-sm shrink-0">
+                            RA
+                        </div>
+                        <div>
+                            <p class="text-xs font-bold text-slate-900">Regles Akid - 011 2735 7561</p>
+                            <div class="w-24 sm:w-32 bg-slate-100 h-1.5 rounded-full mt-1.5 overflow-hidden">
+                                <div id="barAkid" class="bg-emerald-500 h-full rounded-full transition-all duration-300" style="width: 0%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <span id="clickAkid" class="text-xs font-bold text-slate-600">0 clicks</span>
+                </div>
+
+               
+                <!-- Nasrullah / Loh -->
+                <div class="flex items-center justify-between p-3 rounded-xl hover:bg-slate-50 transition-colors border border-slate-100">
+                    <div class="flex items-center gap-3">
+                        <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-purple-100 border border-purple-300 text-purple-700 font-bold flex items-center justify-center text-xs sm:text-sm shrink-0">
+                            RN
+                        </div>
+                        <div>
+                            <p class="text-xs font-bold text-slate-900">Regles Nasrullah - 011 6104 6136</p>
+                            <div class="w-24 sm:w-32 bg-slate-100 h-1.5 rounded-full mt-1.5 overflow-hidden">
+                                <div id="barLoh" class="bg-purple-500 h-full rounded-full transition-all duration-300" style="width: 0%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <span id="clickLoh" class="text-xs font-bold text-slate-600">0 clicks</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Analytics Logic -->
+    <script>
+        const SUPABASE_URL = 'https://yozmjwfunzisbobedfdn.supabase.co';
+        const SUPABASE_KEY = 'sb_publishable_egMHDuTSiQnUDgrD7EmnAw_TUhaw1CR';
+
+        const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+        let chart;
+
+        function getLocalDateString(d) {
+            const date = new Date(d);
+            const year = date.getFullYear();
+            const month = String(date.getMonth() + 1).padStart(2, '0');
+            const day = String(date.getDate()).padStart(2, '0');
+            return `${year}-${month}-${day}`;
+        }
+
+        function handleDropdownChange() {
+            const range = document.getElementById('dateRangeSelect').value;
+            const singlePicker = document.getElementById('singleDatePicker');
+            const customPicker = document.getElementById('customRangePicker');
+
+            if (range === 'custom_range') {
+                singlePicker.classList.add('hidden');
+                customPicker.classList.remove('hidden');
+            } else if (range === 'custom') {
+                singlePicker.classList.remove('hidden');
+                customPicker.classList.add('hidden');
+            } else {
+                singlePicker.classList.add('hidden');
+                customPicker.classList.add('hidden');
+            }
+
+            fetchAnalytics('preset');
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const today = getLocalDateString(new Date());
+            
+            // Set default single date picker
+            if (document.getElementById('singleDatePicker')) {
+                document.getElementById('singleDatePicker').value = today;
+            }
+
+            // Set default custom range (Last 7 days to Today)
+            const sevenDaysAgo = new Date();
+            sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7);
+            if (document.getElementById('startDatePicker')) {
+                document.getElementById('startDatePicker').value = getLocalDateString(sevenDaysAgo);
+            }
+            if (document.getElementById('endDatePicker')) {
+                document.getElementById('endDatePicker').value = today;
+            }
+
+            handleDropdownChange();
+            fetchAnalytics();
+            subscribeToRealtimeUpdates();
+        });
+
+        function subscribeToRealtimeUpdates() {
+            supabaseClient
+                .channel('public:page_analytics')
+                .on(
+                    'postgres_changes',
+                    { event: 'INSERT', schema: 'public', table: 'page_analytics' },
+                    (payload) => {
+                        console.log('⚡ Real-time Event Detected:', payload.new);
+                        fetchAnalytics();
+                    }
+                )
+                .subscribe();
+        }
+
+        async function fetchAnalytics(triggerSource) {
+            const rangeSelect = document.getElementById('dateRangeSelect');
+            const singleDateInput = document.getElementById('singleDatePicker');
+            const startDateInput = document.getElementById('startDatePicker');
+            const endDateInput = document.getElementById('endDatePicker');
+
+            if (triggerSource === 'date' && rangeSelect) {
+                rangeSelect.value = 'custom';
+                handleDropdownChange();
+            } else if (triggerSource === 'custom_range' && rangeSelect) {
+                rangeSelect.value = 'custom_range';
+                handleDropdownChange();
+            }
+
+            const range = rangeSelect ? rangeSelect.value : 'all';
+            const selectedDate = singleDateInput ? singleDateInput.value : getLocalDateString(new Date());
+            const startDate = startDateInput ? startDateInput.value : '';
+            const endDate = endDateInput ? endDateInput.value : '';
+
+            try {
+                const { data, error } = await supabaseClient
+                    .from('page_analytics')
+                    .select('*')
+                    .order('created_at', { ascending: true });
+
+                if (error) {
+                    console.error('Database fetch error:', error);
+                    return;
+                }
+
+                const filteredData = filterDataByDate(data || [], range, selectedDate, startDate, endDate);
+
+                let views = 0;
+                let clicks = 0;
+                let akid = 0, syazwan = 0, loh = 0;
+
+                filteredData.forEach(item => {
+                    if (item.event_type === 'page_view') views++;
+                    if (item.event_type === 'whatsapp_click') {
+                        clicks++;
+                        if (item.target_sales === 'Akid') akid++;
+                        if (item.target_sales === 'Syazwan') syazwan++;
+                        if (item.target_sales === 'Loh') loh++;
+                    }
+                });
+
+                document.getElementById('totalViews').innerText = views;
+                document.getElementById('totalClicks').innerText = clicks;
+                document.getElementById('clickAkid').innerText = `${akid} clicks`;
+                document.getElementById('clickSyazwan').innerText = `${syazwan} clicks`;
+                document.getElementById('clickLoh').innerText = `${loh} clicks`;
+
+                const rate = views > 0 ? ((clicks / views) * 100).toFixed(1) : 0;
+                document.getElementById('conversionRate').innerText = `${rate}%`;
+
+                const maxClicks = Math.max(clicks, 1);
+                document.getElementById('barAkid').style.width = `${(akid / maxClicks) * 100}%`;
+                document.getElementById('barSyazwan').style.width = `${(syazwan / maxClicks) * 100}%`;
+                document.getElementById('barLoh').style.width = `${(loh / maxClicks) * 100}%`;
+
+                renderChart(filteredData);
+            } catch (err) {
+                console.error('Analytics Fetch Failed:', err);
+            }
+        }
+
+        function filterDataByDate(data, range, selectedDate, startDate, endDate) {
+            const now = new Date();
+            const todayStr = getLocalDateString(now);
+
+            return data.filter(item => {
+                if (!item.created_at) return false;
+                const itemDate = new Date(item.created_at);
+                const itemDateStr = getLocalDateString(itemDate);
+
+                if (range === 'custom') {
+                    return itemDateStr === selectedDate;
+                }
+                if (range === 'custom_range') {
+                    if (!startDate || !endDate) return true;
+                    return itemDateStr >= startDate && itemDateStr <= endDate;
+                }
+                if (range === 'today') {
+                    return itemDateStr === todayStr;
+                }
+                if (range === 'yesterday') {
+                    const yesterday = new Date();
+                    yesterday.setDate(now.getDate() - 1);
+                    return itemDateStr === getLocalDateString(yesterday);
+                }
+                if (range === '7days') {
+                    const sevenDaysAgo = new Date();
+                    sevenDaysAgo.setDate(now.getDate() - 7);
+                    sevenDaysAgo.setHours(0, 0, 0, 0);
+                    return itemDate >= sevenDaysAgo;
+                }
+                if (range === '30days') {
+                    const thirtyDaysAgo = new Date();
+                    thirtyDaysAgo.setDate(now.getDate() - 30);
+                    thirtyDaysAgo.setHours(0, 0, 0, 0);
+                    return itemDate >= thirtyDaysAgo;
+                }
+                return true; // 'all'
+            });
+        }
+
+        function renderChart(data) {
+            const days = {};
+
+            data.forEach(item => {
+                const date = new Date(item.created_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+                if (!days[date]) days[date] = { views: 0, clicks: 0 };
+                if (item.event_type === 'page_view') days[date].views++;
+                if (item.event_type === 'whatsapp_click') days[date].clicks++;
+            });
+
+            const labels = Object.keys(days);
+            const viewData = labels.map(d => days[d].views);
+            const clickData = labels.map(d => days[d].clicks);
+
+            if (chart) chart.destroy();
+
+            const ctx = document.getElementById('trafficChart').getContext('2d');
+            chart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: labels.length > 0 ? labels : ['No Data'],
+                    datasets: [
+                        {
+                            label: 'Views',
+                            data: viewData.length > 0 ? viewData : [0],
+                            borderColor: '#3B82F6',
+                            backgroundColor: 'transparent',
+                            borderWidth: 2,
+                            tension: 0.4,
+                            pointRadius: 3
+                        },
+                        {
+                            label: 'Clicks',
+                            data: clickData.length > 0 ? clickData : [0],
+                            borderColor: '#10B981',
+                            backgroundColor: 'transparent',
+                            borderWidth: 2,
+                            tension: 0.4,
+                            pointRadius: 3
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        x: { ticks: { color: '#64748b', font: { size: 10 } }, grid: { display: false } },
+                        y: { beginAtZero: true, ticks: { color: '#64748b', stepSize: 1, font: { size: 10 } }, grid: { color: '#f1f5f9' } }
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>
