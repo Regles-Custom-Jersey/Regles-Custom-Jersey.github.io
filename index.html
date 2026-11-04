@@ -78,27 +78,49 @@
 </head>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
 <script>
   const SUPABASE_URL = 'https://yozmjwfunzisbobedfdn.supabase.co';
   const SUPABASE_KEY = 'sb_publishable_egMHDuTSiQnUDgrD7EmnAw_TUhaw1CR';
 
   const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
-  // 1. Log Page Views on Load
+  // Helper to identify traffic platform (UTM source or referrer)
+  function getTrafficPlatform() {
+    const urlParams = new URLSearchParams(window.location.search);
+    let source = urlParams.get('utm_source');
+
+    if (source) return source.toLowerCase();
+
+    const referrer = document.referrer.toLowerCase();
+    if (referrer.includes('instagram')) return 'instagram';
+    if (referrer.includes('tiktok')) return 'tiktok';
+    if (referrer.includes('facebook')) return 'facebook';
+
+    return 'direct/other';
+  }
+
+  // 1. Log Page Views on Load (with Platform detection)
   async function trackPageView() {
     try {
+      const platform = getTrafficPlatform();
       const { error } = await supabaseClient
         .from('page_analytics')
-        .insert([{ event_type: 'page_view', target_sales: null }]);
+        .insert([{ 
+          event_type: 'page_view', 
+          target_sales: null,
+          platform: platform 
+        }]);
       
       if (error) console.error('Page View Error:', error);
-      else console.log('✅ Page view logged successfully.');
+      else console.log(`✅ Page view logged (${platform}).`);
     } catch (err) {
       console.error('Page View Exception:', err);
     }
   }
 
-  // 2. Background Analytics Tracker (Does not intercept or block WhatsApp opening)
+  // 2. Background Analytics Tracker (Logs platform & salesperson click)
   function trackWhatsAppClickOnly(salespersonName) {
     // Close mobile menu overlay if open
     if (typeof toggleMobileMenu === 'function') {
@@ -108,10 +130,13 @@
       }
     }
 
+    const platform = getTrafficPlatform();
+
     // Fire-and-forget payload to Supabase
     const payload = JSON.stringify({
       event_type: 'whatsapp_click',
-      target_sales: salespersonName
+      target_sales: salespersonName,
+      platform: platform
     });
 
     const endpoint = `${SUPABASE_URL}/rest/v1/page_analytics`;
