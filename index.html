@@ -76,7 +76,6 @@
 
     </style>
 </head>
-<!-- Supabase SDK Library -->
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 <script>
@@ -99,22 +98,8 @@
     }
   }
 
-  // 2. Mobile & TikTok Universal WhatsApp Click Tracker
-  function trackWhatsAppClick(event, salespersonName, fallbackUrl) {
-    if (event) {
-      event.preventDefault();
-      event.stopPropagation();
-    }
-
-    // Safely capture target URL across all mobile event targets
-    let targetUrl = fallbackUrl;
-    if (!targetUrl && event) {
-      const anchorElement = event.target.closest('a');
-      if (anchorElement) {
-        targetUrl = anchorElement.href;
-      }
-    }
-
+  // 2. Background Analytics Tracker (Does not intercept or block WhatsApp opening)
+  function trackWhatsAppClickOnly(salespersonName) {
     // Close mobile menu overlay if open
     if (typeof toggleMobileMenu === 'function') {
       const menu = document.getElementById('mobileMenu');
@@ -123,7 +108,7 @@
       }
     }
 
-    // Send click analytics to Supabase
+    // Fire-and-forget payload to Supabase
     const payload = JSON.stringify({
       event_type: 'whatsapp_click',
       target_sales: salespersonName
@@ -142,43 +127,9 @@
         },
         body: payload,
         keepalive: true
-      }).catch(err => console.error('Fetch error:', err));
+      }).catch(err => console.error('Analytics fetch error:', err));
     } catch (e) {
-      console.error('Send error:', e);
-    }
-
-    if (!targetUrl) return;
-
-    // Parse targetUrl to construct deep-link protocol
-    try {
-      const urlObj = new URL(targetUrl, window.location.origin);
-      const phone = urlObj.searchParams.get('phone') || '';
-      const text = urlObj.searchParams.get('text') || '';
-
-      // Construct native OS app link
-      const nativeScheme = `whatsapp://send?phone=${phone}&text=${text}`;
-
-      let appOpened = false;
-      const handleBlur = () => {
-        appOpened = true;
-        window.removeEventListener('blur', handleBlur);
-      };
-      window.addEventListener('blur', handleBlur);
-
-      // Attempt 1: Trigger native OS protocol (bypasses TikTok in-app security filters)
-      window.location.href = nativeScheme;
-
-      // Attempt 2: Fallback to HTTPS link after 400ms if native protocol is restricted
-      setTimeout(() => {
-        window.removeEventListener('blur', handleBlur);
-        if (!appOpened) {
-          window.location.href = targetUrl;
-        }
-      }, 400);
-
-    } catch (err) {
-      // Direct redirect safety net
-      window.location.href = targetUrl;
+      console.error('Analytics send error:', e);
     }
   }
 
@@ -252,8 +203,9 @@
                          <!-- ================= SECTION 1 ================= -->
 
 <!-- REGLES SYAZWAN -->
-<a href="https://api.whatsapp.com/send?phone=60193426243&text=Salam/Hai%20Regles%20Syazwan.%20Saya%20nak%20tanya%20pasal%20jersey%20sublimation%20boleh?" 
-   onclick="trackWhatsAppClick(event, 'Syazwan', this.href)" 
+<a href="https://wa.me/60193426243?text=Salam/Hai%20Regles%20Syazwan.%20Saya%20nak%20tanya%20pasal%20jersey%20sublimation%20boleh?" 
+   onclick="trackWhatsAppClickOnly('Syazwan')" 
+   target="_self"
    class="flex items-center gap-3 p-2.5 bg-slate-900/50 border border-slate-800 rounded-xl hover:bg-slate-900 transition-colors">
     <div class="w-8 h-8 rounded-full bg-[#25D366]/20 text-[#1eb956] flex items-center justify-center font-bold text-xs">RS</div>
     <div>
@@ -263,8 +215,9 @@
 </a>
 
 <!-- REGLES AKID -->
-<a href="https://api.whatsapp.com/send?phone=601127357561&text=Salam/Hai%20Regles%20Akid.%20Saya%20nak%20tanya%20pasal%20jersey%20sublimation%20boleh?" 
-   onclick="trackWhatsAppClick(event, 'Akid', this.href)" 
+<a href="https://wa.me/601127357561?text=Salam/Hai%20Regles%20Akid.%20Saya%20nak%20tanya%20pasal%20jersey%20sublimation%20boleh?" 
+   onclick="trackWhatsAppClickOnly('Akid')" 
+   target="_self"
    class="flex items-center gap-3 p-2.5 bg-slate-900/50 border border-slate-800 rounded-xl hover:bg-slate-900 transition-colors">
     <div class="w-8 h-8 rounded-full bg-[#25D366]/20 text-[#1eb956] flex items-center justify-center font-bold text-xs">RA</div>
     <div>
@@ -274,8 +227,9 @@
 </a>
 
 <!-- REGLES NASRULLAH (LOH) -->
-<a href="https://api.whatsapp.com/send?phone=601161046136&text=Salam/Hai%20Regles%20Nasrullah.%20Saya%20nak%20tanya%20pasal%20jersey%20sublimation%20boleh?" 
-   onclick="trackWhatsAppClick(event, 'Loh', this.href)" 
+<a href="https://wa.me/601161046136?text=Salam/Hai%20Regles%20Nasrullah.%20Saya%20nak%20tanya%20pasal%20jersey%20sublimation%20boleh?" 
+   onclick="trackWhatsAppClickOnly('Loh')" 
+   target="_self"
    class="flex items-center gap-3 p-2.5 bg-slate-900/50 border border-slate-800 rounded-xl hover:bg-slate-900 transition-colors">
     <div class="w-8 h-8 rounded-full bg-[#25D366]/20 text-[#1eb956] flex items-center justify-center font-bold text-xs">RN</div>
     <div>
@@ -1030,8 +984,9 @@
 
 <!-- Contact Line 1: Syazwan -->
 <a 
-  href="https://api.whatsapp.com/send?phone=60193426243&text=Salam/Hai%20Regles%20Syazwan.%20Saya%20nak%20tanya%20pasal%20jersey%20sublimation%20boleh?" 
-  onclick="trackWhatsAppClick(event, 'Syazwan', this.href)"
+  href="https://wa.me/60193426243?text=Salam/Hai%20Regles%20Syazwan.%20Saya%20nak%20tanya%20pasal%20jersey%20sublimation%20boleh?" 
+  onclick="trackWhatsAppClickOnly('Syazwan')"
+  target="_self"
   class="flex items-center justify-between p-2.5 rounded-xl bg-slate-950 hover:bg-[#25D366]/10 border border-slate-800 hover:border-[#25D366]/40 transition-all group"
 >
     <div>
@@ -1042,8 +997,9 @@
 
 <!-- Contact Line 2: Akid -->
 <a 
-  href="https://api.whatsapp.com/send?phone=601127357561&text=Hai%20Regles%20Akid.%20Saya%20nak%20tanya%20pasal%20jersey%20sublimation%20boleh?" 
-  onclick="trackWhatsAppClick(event, 'Akid', this.href)"
+  href="https://wa.me/601127357561?text=Hai%20Regles%20Akid.%20Saya%20nak%20tanya%20pasal%20jersey%20sublimation%20boleh?" 
+  onclick="trackWhatsAppClickOnly('Akid')"
+  target="_self"
   class="flex items-center justify-between p-2.5 rounded-xl bg-slate-950 hover:bg-[#25D366]/10 border border-slate-800 hover:border-[#25D366]/40 transition-all group"
 >
     <div>
@@ -1054,8 +1010,9 @@
 
 <!-- Contact Line 3: Loh -->
 <a 
-  href="https://api.whatsapp.com/send?phone=601161046136&text=Hai%20Regles%20Nasrullah.%20Saya%20nak%20tanya%20pasal%20jersey%20sublimation%20boleh?" 
-  onclick="trackWhatsAppClick(event, 'Loh', this.href)"
+  href="https://wa.me/601161046136?text=Hai%20Regles%20Nasrullah.%20Saya%20nak%20tanya%20pasal%20jersey%20sublimation%20boleh?" 
+  onclick="trackWhatsAppClickOnly('Loh')"
+  target="_self"
   class="flex items-center justify-between p-2.5 rounded-xl bg-slate-950 hover:bg-[#25D366]/10 border border-slate-800 hover:border-[#25D366]/40 transition-all group"
 >
     <div>
