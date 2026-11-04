@@ -99,7 +99,7 @@
     }
   }
 
-  // 2. Mobile & TikTok-Safe WhatsApp Click Tracker
+  // 2. Mobile & TikTok Universal WhatsApp Click Tracker
   function trackWhatsAppClick(event, salespersonName, fallbackUrl) {
     if (event) {
       event.preventDefault();
@@ -123,6 +123,7 @@
       }
     }
 
+    // Send click analytics to Supabase
     const payload = JSON.stringify({
       event_type: 'whatsapp_click',
       target_sales: salespersonName
@@ -130,7 +131,6 @@
 
     const endpoint = `${SUPABASE_URL}/rest/v1/page_analytics`;
 
-    // Native fetch keepalive guarantees request reaches Supabase during app switch
     try {
       fetch(endpoint, {
         method: 'POST',
@@ -147,11 +147,38 @@
       console.error('Send error:', e);
     }
 
-    // Direct location redirect for TikTok in-app browser compatibility
-    if (targetUrl) {
+    if (!targetUrl) return;
+
+    // Parse targetUrl to construct deep-link protocol
+    try {
+      const urlObj = new URL(targetUrl, window.location.origin);
+      const phone = urlObj.searchParams.get('phone') || '';
+      const text = urlObj.searchParams.get('text') || '';
+
+      // Construct native OS app link
+      const nativeScheme = `whatsapp://send?phone=${phone}&text=${text}`;
+
+      let appOpened = false;
+      const handleBlur = () => {
+        appOpened = true;
+        window.removeEventListener('blur', handleBlur);
+      };
+      window.addEventListener('blur', handleBlur);
+
+      // Attempt 1: Trigger native OS protocol (bypasses TikTok in-app security filters)
+      window.location.href = nativeScheme;
+
+      // Attempt 2: Fallback to HTTPS link after 400ms if native protocol is restricted
       setTimeout(() => {
-        window.location.href = targetUrl;
-      }, 100);
+        window.removeEventListener('blur', handleBlur);
+        if (!appOpened) {
+          window.location.href = targetUrl;
+        }
+      }, 400);
+
+    } catch (err) {
+      // Direct redirect safety net
+      window.location.href = targetUrl;
     }
   }
 
